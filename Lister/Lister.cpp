@@ -33,6 +33,7 @@ void readFile(string path, string dir)
     {
         filesystem::create_directory(dir);
         cout << "No data has been found. New File has been created to prevent any further problems. If this resulted in any data loss contact the developer for assistance.\n";
+        cout << "File created and stored in C:/ProgramData/Lister/list.txt\n";
     }
     else
     {
@@ -59,11 +60,6 @@ void createFile(int length, string path)
     {
         cout << "\nEnter entry " << i + 1 << "\n";
         getline(cin, sInput);
-
-        /*if (i == 0)
-        {
-            getline(cin, sInput);
-        }*/
 
         if (i < length - 1)
         {
@@ -253,12 +249,14 @@ int main()
 
         while (!correctEntry)
         {
+            cout << "===============================================";
             cout << "\nDo you wish to: \n";
             cout << "1. Change the position of an entry?\n";
             cout << "2. Add a new entry?\n";
             cout << "3. Delete an entry?\n";
             cout << "4. Clear the List?\n";
-            cout << "5. Exit?\n\n";
+            cout << "5. Show list location?\n";
+            cout << "6. Exit?\n\n";
 
             getline(cin, sInput);
 
@@ -272,14 +270,17 @@ int main()
                     modifyFile(iInput);
                     correctEntry = true;
                     break;
+
                 case 2:
                     addEntry();
                     correctEntry = true;
                     break;
+
                 case 3:
                     deleteEntry();
                     correctEntry = true;
                     break;
+
                 case 4:
                     cout << "Are you sure?(Yes/No)\n";
                     getline(cin, sInput);
@@ -291,14 +292,21 @@ int main()
                         correctEntry = true;
                     }
                     break;
+
                 case 5:
+                    cout << "The list is stored in C:/ProgramData/Lister/list.txt\n";
+                    getline(cin, sInput);
+                    readFile(filePath, folderPath);
+                    break;
+
+                case 6:
                     loopExit = true;
                     correctEntry = true;
                     break;
+
                 default:
                     cout << "Please enter a valid number.\n";
                 }
-
             }
 
             catch (invalid_argument const& e)

@@ -2,7 +2,7 @@ Features in 1.1
 -Output cleared after each action for better readability
 
 Changes in 1.1
--none (so far)
+-The program now tell the user where the file is created initially
 
 Fixed bugs in 1.1
 -none (so far)
