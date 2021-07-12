@@ -1,0 +1,8 @@
+Features in 1.1
+-Output cleared after each action for better readability
+
+Changes in 1.1
+-none (so far)
+
+Fixed bugs in 1.1
+-none (so far)

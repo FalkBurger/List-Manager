@@ -27,6 +27,7 @@ void readFile(string path, string dir)
 
     bool exists(readFile);
     itExists = exists;
+    system("cls");
 
     if (!itExists)
     {
