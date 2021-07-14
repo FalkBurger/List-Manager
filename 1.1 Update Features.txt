@@ -1,0 +1,10 @@
+Features in 1.1
+-Output cleared after each action for better readability
+-There is now an option to view where the file is stored
+
+Changes in 1.1
+-The program now tell the user where the file is created initially
+-Better readability
+
+Fixed bugs in 1.1
+-none (so far)
