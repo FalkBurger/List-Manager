@@ -219,12 +219,6 @@ void deleteEntry()
     string temp;
     cout << "Which entry to you wish to delete?\n";
     iDelete = validIntAnswer() - 1;
-    
-    /*for (int i = fileLength - 1; i > iDelete - 1; i--)
-    {
-        temp = arrayList[i];
-        arrayList[i] = arrayList[i + 1];
-    }*/
 
     for (int i = iDelete; i < fileLength; i++)
     {
