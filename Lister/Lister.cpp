@@ -17,7 +17,28 @@ using namespace std;
 bool itExists;
 string filePath = "C:/ProgramData/Lister/list.txt", folderPath = "C:/ProgramData/Lister";
 int fileLength;
-string arrayList[255];
+string arrayList[1000000];
+
+string notCorruptEntry()
+{
+    bool bExit = false;
+    string sInput;
+
+    while (!bExit)
+    {
+        getline(cin, sInput);
+        if ((sInput == "") or (sInput == " "))
+        {
+            cout << "Please enter item that is not empty.\n";
+        }
+        else
+        {
+            bExit = true;
+        }
+    }
+
+    return sInput;
+}
 
 void readFile(string path, string dir)
 {
@@ -59,7 +80,7 @@ void createFile(int length, string path)
     for (int i = 0; i < length; i++)
     {
         cout << "\nEnter entry " << i + 1 << "\n";
-        getline(cin, sInput);
+        sInput = notCorruptEntry();
 
         if (i < length - 1)
         {
@@ -206,7 +227,7 @@ void addEntry()
     fstream addEntry(filePath, ios::app);
 
     cout << "Enter new entry.\n";
-    getline(cin, sInput);
+    sInput = notCorruptEntry();
 
     addEntry << "\n" << sInput;
 
@@ -230,14 +251,31 @@ void deleteEntry()
     arrayToFile();
 }
 
+void checkForCorruption()
+{
+    string sInput;
+    ifstream checkFile(filePath);
+
+    getline(checkFile, sInput);
+
+    if ((sInput == "") or (sInput == " "))
+    {
+        cout << "File corruption detected. Resetting file.\n";
+        itExists = false;
+    }
+}
+
+
 int main()
 {
     bool loopExit = false;
     string sInput;
     int iInput;
+
     while (!loopExit)
     {
         readFile(filePath, folderPath);
+        checkForCorruption();
         checkFirstTimeStartup();
         bool correctEntry = false;
 
@@ -285,6 +323,8 @@ int main()
                         checkFirstTimeStartup();
                         correctEntry = true;
                     }
+
+                    correctEntry = true;
                     break;
 
                 case 5:
