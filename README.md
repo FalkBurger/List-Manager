@@ -2,17 +2,16 @@
 Lister is a progam that I developed in my freetime to get in some programming practice and to automate maintaning a list in a text file format. I do plan on fixing any bugs that pop up and adding new features as time goes on, so please lend me any thoughts you have of this project!
 
 
-# Latest version 1.1 release notes:
+# Latest version 1.1.1 release notes:
 
-Features in 1.1
+Changes in 1.1.1
 
--Output cleared after each action for better readability
+-List limit has been raised until a further solution can be found
 
--There is now an option to view where the file is stored
+Fixed bugs in 1.1.1
 
+-Invalid answers to Clear list option now cleans the console
 
-Changes in 1.1
+-User can no longer enter invalid entries for the list
 
--The program now tell the user where the file is created initially
-
--Better readability
+-Empty file no longer breaks the program
