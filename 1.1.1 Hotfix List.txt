@@ -1,0 +1,10 @@
+Features in 1.1.1
+-none (so far)
+
+Changes in 1.1.1
+-List limit has been raised until a further solution can be found
+
+Fixed bugs in 1.1.1
+-Invalid answers to Clear list option now cleans the console
+-User can no longer enter invalid entries for the list
+-Empty file no longer breaks the program
